@@ -30,3 +30,14 @@ public class TimeController {
 Ctrl + click --> brings you to the source/class of where a method is defined
 Ctrl + backspace --> deletes the entire word
  */
+
+/*
+getTime should return UTC time (or GMT) because that is what e/o understands
+
+Create a new endpoint that should take in the timezone and return the time of that timezone
+
+Push up to github and submit the github link
+
+Due: next sunday
+
+ */
