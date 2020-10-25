@@ -15,5 +15,6 @@ public class TimeService {
     public Long getEpochTime() {
         Date date = new Date();
         return date.getTime(); // returns the time in epochTime
+        
     }
 }
