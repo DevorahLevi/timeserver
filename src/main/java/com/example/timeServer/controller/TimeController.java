@@ -1,8 +1,11 @@
 package com.example.timeServer.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.TimeZone;
 
 @RestController // Tells spring that this is a 'rest' controller
 @RequestMapping("/api/v1") //requires this before all other mappings
@@ -23,21 +26,15 @@ public class TimeController {
     public Long getEpochTime() {
         return timeService.getEpochTime();
     }
+
+    @GetMapping("/timeZoneTime/{field}")
+    public String getTimeZoneTime(@PathVariable(value = "field") String timeZone) {
+        return timeService.getTimeZoneTime(timeZone);
+    }
 }
 
 /* Keyboard Shortcuts:
 
 Ctrl + click --> brings you to the source/class of where a method is defined
 Ctrl + backspace --> deletes the entire word
- */
-
-/*
-getTime should return UTC time (or GMT) because that is what e/o understands
-
-Create a new endpoint that should take in the timezone and return the time of that timezone
-
-Push up to github and submit the github link
-
-Due: next sunday
-
  */
