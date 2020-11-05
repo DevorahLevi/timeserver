@@ -1,5 +1,6 @@
 package com.example.timeServer.controller;
 
+import com.example.timeServer.model.TimeResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,10 +32,17 @@ public class TimeController {
     public String getTimeZoneTime(@PathVariable(value = "field") String timeZone) {
         return timeService.getTimeZoneTime(timeZone);
     }
+
+    @GetMapping("/getTime")
+    public TimeResponse getTimeResponse()
+    {
+        return timeService.getTimeResponse();
+    }
 }
 
 /* Keyboard Shortcuts:
 
 Ctrl + click --> brings you to the source/class of where a method is defined
 Ctrl + backspace --> deletes the entire word
+@Data makes getters for all of your instance variables. Put before the public class line
  */
